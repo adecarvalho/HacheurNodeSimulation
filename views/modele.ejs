@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <% include head.ejs %>
+</head>
+
+<body>
+    <% include header.ejs %>
+
+    <div class="container">
+
+        <h1 class="text-center"><%= titre %></h1>
+
+        <!--  -->
+        <% if (succes==false) { %>
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert">
+                    <span>&times;</span>
+                </button>
+                    <strong>Message</strong>
+
+                    <% if(error != undefined) { %>
+                        <ul>
+                            <% for(var i=0; i< error.length;i++){ %>
+                                <li>
+                                    <%= error[i].msg %>
+                                </li>
+                                <% }%>
+                        </ul>
+                        <% } %>
+                </div>
+                <% } %>
+        <!--  -->
+        <div class="row">
+            <div class="col-md-4">
+                <!-- les parametres -->
+                <form action="/" method="post" class="mform">
+                    <!-- valeur Ve-->
+                    <div class="form-group">
+                        <label for="hacheur_ve">Tension Ve [V]:</label>
+                        <input type="number" id="hacheur_ve" name="hacheur_ve" value="<%= hacheur_datas.ve %>" step=0.1 min=0 max=100 class="form-control">
+                    </div>
+                    <!-- valeur R-->
+                    <div class="form-group">
+                        <label for="hacheur_r">Résistance R:</label>
+                        <input type="number" id="hacheur_r" name="hacheur_r" value="<%= hacheur_datas.r %>" step=0.1 min=5 max=100 class="form-control">
+                    </div>
+                    <!-- valeur L-->
+                    <div class="form-group">
+                        <label for="hacheur_l">Inductance L [H]:</label>
+                        <input type="number" id="hacheur_l" name="hacheur_l" value="<%= hacheur_datas.l %>" step=0.001 min=0 max=10 class="form-control">
+                    </div>
+                    <!-- valeur Vd0-->
+                    <div class="form-group">
+                        <label for="hacheur_vd0">Tension diode  Vd0 [V]:</label>
+                        <input type="number" id="hacheur_vd0" name="hacheur_vd0" value="<%= hacheur_datas.vd0 %>" step=0.01 min=0 max=10 class="form-control">
+                    </div>
+                    <!-- valeur rdson-->
+                    <div class="form-group">
+                        <label for="hacheur_rdson">Transistor MosFet Rdson:</label>
+                        <input type="number" id="hacheur_rdson" name="hacheur_rdson" value="<%= hacheur_datas.rdson %>" step=0.01 min=0 max=10 class="form-control">
+                    </div>
+
+                    <!-- submit -->
+                    <input type="submit" class="btn btn-primary btn-lg" value="Enregistrer">
+
+            </div>
+            <div class="col-md-4">
+                <!-- valeur freq-->
+                <div class="form-group">
+                    <label for="hacheur_freq">Fréquence MLI [Hz]:</label>
+                    <input type="number" id="hacheur_frequence" name="hacheur_frequence" value="<%= hacheur_datas.freq %>" step=1 min=200 max=1000 class="form-control">
+                </div>
+
+                <!-- valeur rapport cyclique-->
+                <div class="form-group">
+                    <label for="hacheur_cyclique">Rapport cyclique &#945 [%]:</label>
+                    <input type="number" id="hacheur_cyclique" name="hacheur_cyclique" value="<%= hacheur_datas.alpha %>" step=1 min=0 max=100 class="form-control">
+                </div>
+
+                <img src="/images/mli.png" id="image_mli" class="img-fluid mx-auto" alt="fig mli">
+
+                </form>
+                    <!-- fig -->
+            </div>
+                <!-- fig -->
+            <div class="col-md-4">
+                <img src="/images/modele_de_hacheur.png" id="image_hacheur" class="img-fluid mx-auto" alt="fig hacheur">
+            </div>
+        </div>
+            <!--  -->
+            <% include footer.ejs %>
+        </div>
+        <% include les_scripts.ejs %>
+</body>
+
+</html>

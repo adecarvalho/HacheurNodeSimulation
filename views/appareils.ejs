@@ -1,0 +1,41 @@
+<h1 class="text-center"><%= titre %></h1>
+    <!-- allure de ic(t) -->
+        <div class="row">
+            <div class="col-md-12">
+                <canvas id="m_canvas_ic" class="graphic"></canvas>
+            </div>
+        </div>
+    <!-- afficheurs -->
+    <div class="row">
+        <!-- bloc tension moyenne -->
+        <div class="col-md-6 col-sm-12 py-4" id="tension_moyenne">
+            <div class="card text-center" id="card_tension">
+                <div class="card-header bg-primary mtete">
+                    <h3>Uc moyenne (V)</h3>
+                </div>
+                <div class="card-body">
+                    <p id="gauge_tension_moyenne" class="mlcd">0.0</p>
+                </div>
+            </div>
+        </div>
+        <!-- bloc Courant primaire -->
+        <div class="col-md-6 col-sm-12 py-4" id="courant_moyen">
+            <div class="card text-center" id="card_courant">
+                <div class="card-header bg-primary mtete">
+                    <h3>Ic moyen (A)</h3>
+                </div>
+                <div class="card-body">
+                    <p id="gauge_courant_moyen" class="mlcd">0.0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- allure de uc(t)  -->
+    <div class="row">
+        <div class="col-md-12">
+            <canvas id="m_canvas_uc" class="graphic"></canvas>
+        </div>
+    </div>
+
+    <!--  -->
