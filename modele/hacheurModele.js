@@ -7,8 +7,8 @@ class HacheurModele {
             ve: 50,
             r: 33,
             l: 0.11,
-            vd0: 0.8,
-            rdson: 0.01,
+            vd0: 1.0,
+            rdson: 0.1,
             freq: 200,
             alpha: 50
         }
@@ -17,17 +17,17 @@ class HacheurModele {
         //
         this.courant_moyen=0
 
-        this.tabTime = new Array(valmax)
+        this.tabTime = []
         //
-        this.tabUc = new Array(valmax)
+        this.tabUc = []
         //
-        this.tabIc = new Array(valmax)
+        this.tabIc = []
         //
         for(let i=0;i<valmax;i++)
         {
-            this.tabIc[i]=0.0
-            this.tabTime[i]=0.0
-            this.tabUc[i]=0.0
+            this.tabIc.push(0.0)
+            this.tabTime.push(0.0)
+            this.tabUc.push(0.0)
         }
     }
     //

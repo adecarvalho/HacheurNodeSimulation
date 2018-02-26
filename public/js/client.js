@@ -12,15 +12,15 @@ jQuery(function($){
     let m_options_uc = undefined;
     let m_options_ic = undefined;
 
-    let tabTemps = new Array(valmax);
-    let tabUc = new Array(valmax);
-    let tabIc = new Array(valmax);
+    let tabTemps = [];
+    let tabUc = [];
+    let tabIc = [];
 
     for(let i=0;i<valmax;i++)
     {
-        tabTemps[i]=0;
-        tabUc[i]=0;
-        tabIc[i]=0;
+        tabTemps.push(0);
+        tabUc.push(0);
+        tabIc.push(0);
     }
 
     //
