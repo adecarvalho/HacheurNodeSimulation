@@ -36,7 +36,7 @@ jQuery(function($){
             datasets: [{
                 radius: 0,
                 fill: true,
-                label: 'Allure Uc(t)',
+                label: 'Uc(t)',
                 borderColor: "#3e95cd",
                 data:tabUc
             }]
@@ -47,6 +47,7 @@ jQuery(function($){
             },
             title: {
                 display: true,
+                fontSize:18,
                 text: 'Allure de Uc(t)'
             },
             scales: {
@@ -67,7 +68,7 @@ jQuery(function($){
             datasets: [{
                 radius: 1,
                 fill: false,
-                label: 'Allure Ic(t)',
+                label: 'Ic(t)',
                 borderColor: "#3e95cd",
                 data:tabIc
             }]
@@ -78,6 +79,7 @@ jQuery(function($){
             },
             title: {
                 display: true,
+                fontSize:18,
                 text: 'Allure de Ic(t)'
             },
             scales: {
