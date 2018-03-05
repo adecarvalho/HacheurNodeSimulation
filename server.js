@@ -1,3 +1,4 @@
+
 const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
@@ -142,4 +143,10 @@ io.sockets.on('connection', (socket) => {
     socket.on('ready', () => {
         tracer_courbes()
     })
+})
+
+//exit
+process.on('SIGINT',()=>{
+    io.sockets.emit('exit')
+    process.exit()
 })

@@ -18,6 +18,24 @@ body html{
     margin: 0;
 }
 
+nav a:hover{
+    color:#fff;
+}
+
+form a{
+    text-decoration: none;
+    font-style: italic;
+    font-size: 12px;
+}
+
+form a:hover{
+    text-decoration: none;
+    font-size: 15px;
+    font-style: italic;
+}
+
+
+
 h1{
     font-size: 3em;
     font-weight: bold;
@@ -82,4 +100,9 @@ h1{
 
 #card_tension{
    display: none;
+}
+
+.myicon{
+    margin:2px;
+    padding: 2px;
 }

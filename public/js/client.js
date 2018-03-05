@@ -133,4 +133,9 @@ jQuery(function($){
         m_chart_uc.update();
         m_chart_ic.update();
     });
+
+    //
+    socket.on('exit',function(){
+        socket.close();
+    })
 });
